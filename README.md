@@ -12,7 +12,7 @@ By default this plugin constructs the following component elements:
 * **summary** shows how many items in the list are currently checked.
 * **footer** includes links for checking all checkboxes or none
 
-[[img/example.png]]
+![](img/example.png)
 
 ##Configuration options
 
