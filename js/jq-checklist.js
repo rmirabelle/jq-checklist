@@ -63,11 +63,6 @@
         var settings = $.extend(true, {}, defaults, options);
 
         this.each(function () {
-            /**
-             * Update the settings to allow overrides via metadata plugin.
-             * Not necessary for newer versions of jquery, which include
-             * metadata parsing via .data() already
-             */
             settings = $.extend(true, {}, settings, $(this).metadata());
             api = new Checklist($(this), settings);
             $(this).data('checklist', api);
@@ -203,20 +198,14 @@
 
                 $(this).addClass('checkreplace');
 
-                //var cb_name 		= $(this).attr('name');
-                var cb_value = $(this).attr('value');
-                var meta = $(this).metadata();
-                /**
-                 * prefer the 'label:' metadata
-                 * fallback to checkbox value otherwise
-                 */
-                var cb_meta_label = meta.label || cb_value;
                 //noinspection JSUnresolvedVariable
-				var cb_meta_tip = meta.tip || false;
-                var cb_meta_title = meta.title || false;
-
-                var label = $('<label>').html(cb_meta_label);
-                var li = $('<li>');
+				var cb_value = $(this).attr('value'),
+					meta = $(this).metadata(),
+					cb_meta_label = meta.label || cb_value,
+					cb_meta_tip = meta.tip || false,
+					cb_meta_title = meta.title || false,
+					label = $('<label>').html(cb_meta_label),
+					li = $('<li>');
 
                 if (cb_meta_title) li.attr('title', cb_meta_title);
 
@@ -344,8 +333,7 @@
              * own handler here. Your handler will receive the API as
              * its only argument.
              */
-            oncheck: function () {
-            }
+            oncheck: function () {}
         };
 
         var settings = $.extend(true, {}, defaults, options);

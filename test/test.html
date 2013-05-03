@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="../js/jquery-1.4.2.js"></script>
+	<script src="../js/metadata.js"></script>
+	<script src="../js/jq-checklist.js"></script>
+	<script>
+		$().ready(function(){
+			$('#cool').checklist();
+		});
+	</script>
+	<link href="../css/checklist.css" rel="stylesheet">
+</head>
+<body>
+<div id="cool" class="{title:'My Checklist'}">
+    <input type="checkbox" name="users[]" value="1" class="{label:'Smith, Robert', tip:'Bill is a standup guy'}" checked/>
+    <input type="checkbox" name="users[]" value="2" class="{label:'Smith, Steve M.'}"/>
+</div>
+</body>
+</html>

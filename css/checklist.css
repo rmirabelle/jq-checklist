@@ -117,6 +117,7 @@
 .checklist-search input {
 	-moz-box-sizing: content-box;
 	-ms-box-sizing: content-box;
+	width:94%;
 	background: #EEE url(img/input_back.gif) -10px;
 	border: 1px solid #999;
 	box-sizing: content-box;
