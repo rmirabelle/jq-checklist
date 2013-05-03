@@ -5,7 +5,7 @@
 Checklist is a jQuery plugin replacement for <code>&lt;select multiple&gt;</code> with
 some useful enhancements.
 
-[[img/example.png]]
+![](img/example.png)
 
 ### Toggle to select/deselect
 
