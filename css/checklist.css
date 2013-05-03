@@ -1,0 +1,143 @@
+.checklist-body {
+	background-color: #FFF;
+	border: 1px solid #CCC;
+	font-size: 12px;
+	height: 200px;
+	overflow: auto;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: left;
+}
+
+.checklist-body a.tip {
+	background-image: url(img/help.png);
+	display: inline-block;
+	height: 16px;
+	margin-left: 5px;
+	width: 16px;
+}
+
+.checklist-body label {
+	display: block;
+	height: 20px;
+	line-height: 20px;
+	margin: 0;
+}
+
+.checklist-body label.check {
+	background: url(img/check.png) no-repeat 2px;
+	cursor: pointer;
+	font-weight: bold;
+	text-indent: 24px;
+}
+
+.checklist-body label.uncheck {
+	background: url(img/uncheck.png) no-repeat 2px;
+	color: #666;
+	cursor: pointer;
+	text-indent: 24px;
+}
+
+.checklist-body ul {
+	margin: 10px 0;
+	padding: 0;
+	text-align: left;
+}
+
+.checklist-body ul li {
+	border-style: none;
+	display: block;
+	height: 20px;
+	margin: 0;
+	padding: 0;
+}
+
+.checklist-body ul li:hover {
+	background-color: #EEE;
+	color: #06F;
+}
+
+.checklist-body.nonechecked label {
+	background-image: url(img/check.png);
+}
+
+.checklist-body.readonly label.check {
+	cursor: auto;
+}
+
+.checklist-body.readonly label.uncheck {
+	cursor: auto;
+}
+
+.checklist-body.readonly ul li:hover {
+	background-color: #FFF;
+	color: #06F;
+}
+
+.checklist-footer {
+	background-color: #DDD;
+	border-bottom: 1px solid #CCC;
+	border-left: 1px solid #CCC;
+	border-right: 1px solid #CCC;
+	font-size: 11px;
+	padding-bottom: 3px;
+	padding-top: 3px;
+}
+
+.checklist-frame {
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	margin-right: 10px;
+	text-align: center;
+	width: 240px;
+}
+
+.checklist-header {
+	background: #EEE url(img/th.gif);
+	border-left: 1px solid #CCC;
+	border-right: 1px solid #CCC;
+	border-top: 1px solid #CCC;
+	color: #000;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 5px;
+}
+
+.checklist-search {
+	background-color: #eee;
+	border-left: 1px solid #CCC;
+	border-right: 1px solid #CCC;
+	border-top: 1px solid #CCC;
+	padding: 2px;
+}
+
+.checklist-search input {
+	-moz-box-sizing: content-box;
+	-ms-box-sizing: content-box;
+	background: #EEE url(img/input_back.gif) -10px;
+	border: 1px solid #999;
+	box-sizing: content-box;
+	display: inline;
+	font-size: 11px;
+	font-weight: bold;
+	height: 1.4em;
+	line-height: normal !important;
+	padding-left: 4px;
+	padding-right: 4px;
+	vertical-align: middle;
+}
+
+.checklist-summary {
+	background-color: #FFF;
+	border-left: 1px solid #CCC;
+	border-right: 1px solid #CCC;
+	color: #999;
+	font-size: 11px;
+	font-weight: normal;
+	margin: 0;
+	padding-bottom: 1px;
+	padding-top: 1px;
+}
