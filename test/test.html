@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script src="../js/jquery-1.4.2.js"></script>
-	<script src="../js/metadata.js"></script>
-	<script src="../js/jq-checklist.js"></script>
+	<script src="../js/jquery-1.9.0.min.js"></script>
+	<script src="../js/checkreplace.js"></script>
+	<script src="../js/itemfilter.js"></script>
+	<script src="../js/checklist.js"></script>
 	<script>
 		$().ready(function(){
 			$('#cool').checklist();
@@ -12,9 +13,17 @@
 	<link href="../css/checklist.css" rel="stylesheet">
 </head>
 <body>
-<div id="cool" class="{title:'My Checklist'}">
-    <input type="checkbox" name="users[]" value="1" class="{label:'Smith, Robert', tip:'Bill is a standup guy'}" checked/>
-    <input type="checkbox" name="users[]" value="2" class="{label:'Smith, Steve M.'}"/>
+<div id="cool" data-title="My Checklist">
+    <input type="checkbox" name="users[]" value="1" data-label="Smith, Robert" data-tip="Bill is a standup guy" checked/>
+    <input type="checkbox" name="users[]" value="2" data-label="Smith, Steve M."/>
+	<input type="checkbox" name="users[]" value="3" data-label="Jones, Michael A."/>
+	<input type="checkbox" name="users[]" value="4" data-label="Johnson, Tina"/>
+	<input type="checkbox" name="users[]" value="5" data-label="Kaplan, Joseph T."/>
+	<input type="checkbox" name="users[]" value="6" data-label="Seagull, Jonathan L."/>
+	<input type="checkbox" name="users[]" value="7" data-label="Stanton, Rafael B."/>
+	<input type="checkbox" name="users[]" value="8" data-label="Stonenfeld, Jessica M."/>
+	<input type="checkbox" name="users[]" value="7" data-label="Kirk, James T." data-tip="I need warp speed in 3 minutes or we're all dead"/>
+	<input type="checkbox" name="users[]" value="7" data-label="Picard, Jean L." data-tip="Make it so."/>
 </div>
 </body>
 </html>

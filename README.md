@@ -1,4 +1,4 @@
-#jq-checklist
+#checklist
 
 ##A better way to multi-select
 
@@ -6,6 +6,8 @@ Checklist is a jQuery plugin replacement for <code>&lt;select multiple&gt;</code
 some useful enhancements.
 
 ![](img/example.png)
+
+
 
 ### Toggle to select/deselect
 
@@ -34,23 +36,18 @@ Checklist includes an optional search box.
 
 ### 1. Include scripts...
 
-<blockquote>Updated version will support the latest jQuery and will not require the metadata plugin</blockquote>
-
 ```html
-<script src="jquery-1.4.2.js"></script>
-<script src="metadata.js"></script>
-<script src="jq-checklist.min.js"></script>
+<script src="jquery-1.9.0.min.js"></script>
+<script src="checklist.min.js"></script>
 <link href="checklist.css" rel="stylesheet">
 ```
 
 ### 2. Create a div containing one or more checkboxes with some data...
 
-<blockquote>Updated version of jq-checklist (coming soon) will use "data-" attributes instead</blockquote>
-
 ```html
-<div id="cool" class="{title:'My Checklist'}">
-    <input type="checkbox" name="users[]" value="1" class="{label:'Smith, Robert', tip:'Robert is a standup guy'}" checked/>
-    <input type="checkbox" name="users[]" value="2" class="{label:'Smith, Steve M.'}"/>
+<div id="cool" data-title="My Checklist">
+    <input type="checkbox" name="users[]" value="1" data-label="Smith, Robert" data-tip="Robert is a standup guy" checked/>
+    <input type="checkbox" name="users[]" value="2" data-label="Smith, Steve M."/>
 </div>
 ```
 
@@ -70,13 +67,13 @@ The HTML chunk above expands to this at runtime:
 	<div class="checklist-search">
 		<input type="text">
 	</div>
-	<div id="cool" class="{title:'My Awesome Title'} checklist-body">
+	<div id="cool" data-title="My Awesome Title" class="checklist-body">
 		<ul>
-			<li class="{data:'Smith, Robert'}">
+			<li>
 				<label class="check">Smith, Robert</label>
 				<input type="checkbox" name="users[]" value="1" class="checkreplace" style="display:none">
 			</li>
-			<li class="{data:'Smith, Steve M.'}">
+			<li>
 				<label class="uncheck">Smith, Steve M.</label>
 				<input type="checkbox" name="users[]" value="2" class="checkreplace" style="display:none">
 			</li>
@@ -90,21 +87,16 @@ The HTML chunk above expands to this at runtime:
 ###Observations
 
 * The checkboxes are assigned an associated `label` and are wrapped in an `li`
-* The `li` contains a `data` attribute equal to the checkbox value. This is used for searching and filtering.
-When you enter a new value into the input, the `li` is shown or hidden depending on whether its data matches the current value.
-* The checkboxes are assigned a css class of `.checkreplace`, which this plugin reads at runtime to hide them,
-so that you interact with the labels instead.
+* The checkboxes are assigned a css class of `.checkreplace`, which this plugin reads at runtime to hide them, so that you interact with the labels instead.
 * Labels toggle between css class of `.check` and `.uncheck` when clicked.
-* The `title` data assigned to the original div is translated into the title
+* The `title` data assigned to the original div is translated into the checklist-header content
 * Each of the component divs is assigned a css class beginning with `checklist-` This prefix is configurable
 * The outermost wrapper div is assigned an id equal to the original div's id + `-frame`. This allows you to target the
 overall width of the checklist via css, e.g. `#cool-frame {width:300px;}`
 
-
-
 ##Configuration
 
-Configure jq-checklist by passing an object literal to its constructor.
+Configure checklist by passing an object literal to its constructor.
 
 ###Complete Configuration example:
 
@@ -171,9 +163,9 @@ $('#cool').data('checklist').bubble_checked();
 
 ## 3 Plugins in One
 
-jq-checklist is actually 3 jQuery plugins rolled into one:
+checklist is actually 3 jQuery plugins rolled into one:
 
- * **1. `jq-checklist`** the main plugin
+ * **1. `checklist`** the main plugin
  * **2. `checkreplace`** handles just the checkbox replacement
  * **3. `itemfilter`** can be used to create a searchable list from any repeating element
 
